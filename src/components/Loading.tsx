@@ -21,6 +21,7 @@ const Loading: React.FC<LoadingProps> = ({ width = 600, height = 100 }) => {
 
 const styles = {
   container: {
+    padding: '16px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
