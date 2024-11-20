@@ -21,7 +21,7 @@ Ensure you have the following installed on your local development machine:
 
 1. Clone the Repository:
 
-`git clone [https://github.com/your-username/your-repo-name.git](https://github.com/dutyuzh/disney.git)`
+`git clone https://github.com/your-username/your-repo-name.git`
 `cd disney`
 
 2. Install Dependencies
