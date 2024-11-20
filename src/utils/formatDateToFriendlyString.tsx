@@ -1,7 +1,11 @@
-// Utility to convert date string (11/19/2024, 6:37:23 PM) to "May 20th, 2024"
 export const formatDateToFriendlyString = (dateString: string): string => {
-    // Parse the input date string
-    const date = new Date(dateString);
+    // Convert the input date string to a valid Date object
+    const date = new Date(dateString.replace(/,/g, '')); // Remove commas for consistent parsing
+    
+    // Check if the date is valid
+    if (isNaN(date.getTime())) {
+      return ""; // If invalid date, return a fallback message
+    }
   
     // Array of month names
     const monthNames = [
@@ -29,8 +33,4 @@ export const formatDateToFriendlyString = (dateString: string): string => {
     // Return the formatted date string
     return `${month} ${dayWithSuffix}, ${year}`;
   };
-  
-  // Example usage
-  const formattedDate = formatDateToFriendlyString("11/19/2024, 6:37:23 PM");
-
   

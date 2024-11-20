@@ -52,9 +52,19 @@ const EditProfile: React.FC = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        // Get the current date
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+
+        // Update the profile with the current date for lastUpdatedDate
+        const updatedProfile = { ...profile, lastUpdatedDate: currentDate };
+
         // Set the cookie only if it doesn't already exist
         if (!Cookies.get('userProfile')) {
-            Cookies.set('userProfile', JSON.stringify(profile), { expires: 7 });
+            Cookies.set('userProfile', JSON.stringify(updatedProfile), { expires: 7 });
         }
         alert('Profile updated successfully!');
         window.location.href = '/account/profile'; // Redirect back to the profile page
