@@ -74,7 +74,7 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <Navbar onSearch={handleSearch} />
 
-        {error ? <p>Oops! The characters escaped the magic kingdom. Try again later.</p> :
+        {error ? <h1 className="bg-secondary p-10 text-center font-lg font-bold">Oops! The characters escaped the magic kingdom. Try again later.</h1> :
           <Component 
             key={router.asPath} 
             {...pageProps} 
