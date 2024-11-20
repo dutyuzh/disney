@@ -47,7 +47,7 @@ const ProfilePage: React.FC = () => {
   const updatedDate = formatDateToFriendlyString(new Date(profile.lastUpdatedDate).toLocaleDateString());
 
   return (
-    <div className="bg-secondary mx-32 px-12 py-8 md:px-12 sm:px-8">
+    <div className="bg-secondary mx-32 md:mx-12 sm:mx-8 px-20 py-8 md:px-12 sm:px-8">
       <h1 className="font-lato text-[40px] font-semibold">{profile.firstName} {profile.lastName}</h1>
       <small className="text-ellipsisdarkGray">Last Updated: {updatedDate}</small>
       <p className="mt-6"><strong>Age:</strong> {age}</p>
