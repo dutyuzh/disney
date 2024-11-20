@@ -18,12 +18,14 @@ Before you can start exploring the magic, make sure you have the following insta
 ## Installation
 
 1. Clone the Repository
+   
 To get started, clone the project repository:
 
 `git clone https://github.com/dutyuzh/disney.git`
 `cd disney`
 
 2. Install Dependencies
+   
 Run the following command to install all necessary dependencies:
 
 `npm install`
