@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDateToFriendlyString } from "@/utils/formatDateToFriendlyString";
@@ -25,18 +25,30 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
   lastUpdatedDate,
 }) => {
   const updatedDate = formatDateToFriendlyString(new Date(lastUpdatedDate).toLocaleDateString());
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div className="p-[48px] flex md:flex-wrap sm:flex-wrap">
       {/* Left side - Image */}
       <div className="w-1/2 md:w-1/3 h-96 relative mb-6 md:mb-0">
-        <Image
-          src={imageSrc}
-          alt={characterName}
-          fill
-          style={{ objectFit: 'cover' }}
-          className="rounded-lg shadow-lg"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+        {!imageError ? (
+          <Image
+            src={imageSrc}
+            alt={characterName}
+            fill
+            style={{ objectFit: 'cover' }}
+            className="rounded-lg shadow-lg"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            onError={() => {
+              setImageError(true); // Trigger fallback to gray background
+            }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+            {/* Optional text or icon can be placed here */}
+            <span className="text-textSecondary">Image not available</span>
+          </div>
+        )}
       </div>
       {/* Right side - Character Details */}
       <div className="w-full md:w-2/3 md:pl-4 pl-8">

@@ -39,7 +39,6 @@ const Character: React.FC<CharacterProps> = ({
           />
         ) : (
           <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-            {/* Optional text or icon can be placed here */}
             <span className="text-textSecondary">Image not available</span>
           </div>
         )}
