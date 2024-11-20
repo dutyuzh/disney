@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import EditProfile from "@/components/EditProfile";
 import { formatDateToFriendlyString } from "@/utils/formatDateToFriendlyString";
+import { calculateAge } from '@/utils/calculateAge';
 
 interface UserProfile {
   firstName: string;
@@ -26,19 +27,7 @@ const ProfilePage: React.FC = () => {
     }
   }, []);
 
-  // Function to calculate age from birthdate
-  const calculateAge = (birthDate: string) => {
-    const birthDateObj = new Date(birthDate);
-    const currentDate = new Date();
-    let age = currentDate.getFullYear() - birthDateObj.getFullYear();
-    const monthDifference = currentDate.getMonth() - birthDateObj.getMonth();
-    // Adjust age if the birthday hasn't occurred yet this year
-    if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < birthDateObj.getDate())) {
-      age--;
-    }
-    return age;
-  };
-
+ 
   if (!profile) {
     return <EditProfile />;
   }
