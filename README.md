@@ -35,9 +35,6 @@ To run the project in development mode with hot reloading:
 
 This command starts a local development server at http://localhost:3000. As you work on your Disney Character Search page, any changes to your code will automatically refresh the page for you.
 
-To spin up the magical search page locally, navigate to:
-Character Search: The homepage will allow you to search for Disney characters by name. Simply type in your favorite character's name and discover their details!
-
 ## Building the Project
 To build the project for production:
 
