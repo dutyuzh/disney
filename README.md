@@ -42,9 +42,3 @@ This command starts a local development server at http://localhost:3000. Any cha
 ### To run the project in production:
 
 `npm run build`
-
-## Custom Scripts
-`npm run lint / npm lint: Lints the codebase using ESLint.`
-`npm run build / npm build: Builds the project for production.`
-`npm run start / yarn start: Runs the production build.`
-`npm run dev / yarn dev: Starts the development server.`
