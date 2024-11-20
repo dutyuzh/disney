@@ -56,7 +56,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ characters, searchString 
           <div className="grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-2 gap-4" >
             {characters.length > 0 && (
               characters.map((character) => (
-                <div className="hover:cursor-pointer" onClick={() => handleViewDetails(character._id, character.sourceUrl, character.updatedAt)}>
+                <div key={character._id} className="hover:cursor-pointer" onClick={() => handleViewDetails(character._id, character.sourceUrl, character.updatedAt)}>
                   <CharacterCard
                     key={character._id}
                     imageSrc={character.imageUrl}
