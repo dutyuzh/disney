@@ -32,9 +32,10 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
         <Image
           src={imageSrc}
           alt={characterName}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="rounded-lg shadow-lg"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
       {/* Right side - Character Details */}

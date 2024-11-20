@@ -70,7 +70,7 @@ const EditProfile: React.FC = () => {
     };
 
     return (
-        <div className="bg-secondary mx-32 md:mx-12 sm:mx-8 px-20 py-8 md:px-12 sm:px-8">
+        <div className="bg-secondary mx-32 md:mx-12 sm:mx-4 p-[80px] pt-[40px] sm:p-[16px]">
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="flex gap-4">
                     <div className="flex-1">

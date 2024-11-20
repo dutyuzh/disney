@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import CharacterCard from './CharacterCard';
-import CharacterDetails from './CharacterDetails';
 
 // Define the structure of a single character
 export interface Character {
@@ -24,58 +23,31 @@ export interface Character {
 interface CharacterListProps {
   characters: Character[];
   searchString: string;
+  onClickViewDetails: (id: number, sourceUrl: string, updatedAt: string) => void;
 }
 
-const CharacterList: React.FC<CharacterListProps> = ({ characters, searchString }) => {
+const CharacterList: React.FC<CharacterListProps> = ({ characters, onClickViewDetails }) => {
 
-  const [selectedCharacterId, setSelectedCharacterId] = useState<number | null>(null);
-  const [selectedSourceUrl, setSourceUrl] = useState<string | null>(null);
-  const [selectedUpdatedDate, setUpdatedDate] = useState<string | null>(null);
-  // Function to handle the "View Details" click
-  const handleViewDetails = (id: number, sourceUrl: string, updatedAt: string) => {
-    setSelectedCharacterId(id); // Set the selected character ID
-    setSourceUrl(sourceUrl);
-    setUpdatedDate(updatedAt)
-  };
-
-  // Function to handle going back to the character list
-  const handleGoBack = () => {
-    setSelectedCharacterId(null); // Reset the selected character ID
-  };
 
   return (
-    <>
-      {selectedCharacterId === null ? (
-        <div className="container mx-auto mb-20 px-20 py-10 xl:p-24 lg:p-16 md:p-12 sm:p-8 ">
-          {searchString && (
-            <h2 className="text-[36px] pb-8 text-center">
-              Search Results - {searchString}
-            </h2>
-          )}
-          {characters.length === 0 && <p className="text-2xl font-bold text-center">Oops! Even magic couldn't find that character. Try another spell (or name)!</p>}
-          <div className="grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-2 gap-4" >
-            {characters.length > 0 && (
-              characters.map((character) => (
-                <div key={character._id} className="hover:cursor-pointer" onClick={() => handleViewDetails(character._id, character.sourceUrl, character.updatedAt)}>
-                  <CharacterCard
-                    key={character._id}
-                    imageSrc={character.imageUrl}
-                    characterName={character.name}
-                    featuredFilms={character.films}
-                    id={character._id} />
-                </div>
-              ))
-            )}
+    <div className="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      {characters.length > 0 && (
+        characters.map((character) => (
+          <div key={character._id} className="w-full">
+            <CharacterCard
+              characterId={character._id}
+              sourceUrl={character.sourceUrl}
+              updatedAtDate={character.updatedAt}
+              onClickViewDetails={onClickViewDetails}
+              key={character._id}
+              imageSrc={character.imageUrl}
+              characterName={character.name}
+              featuredFilms={character.films} />
           </div>
-        </div>
-      ) : (
-        <CharacterDetails 
-          characterId={selectedCharacterId} 
-          onGoBack={handleGoBack} 
-          srcUrl={selectedSourceUrl || ''} 
-          lastUpdatedDate={selectedUpdatedDate || ''} />
+        ))
       )}
-    </>
+    </div>
+
   );
 };
 

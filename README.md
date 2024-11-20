@@ -1,13 +1,12 @@
 # Project Name
 
-Welcome to your Next.js project! This README provides step-by-step instructions on how to set up, run, and develop Disney project locally.
+Welcome to your Next.js Disney Character Search project! This README provides step-by-step instructions on how to set up, run, and develop Disney project locally.
 
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
 3. [Running the Project](#running-the-project)
-4. [Custom Scripts](#custom-scripts)
 
 
 ## Prerequisites

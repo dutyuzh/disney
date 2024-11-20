@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface CharacterProps {
+  characterId: number;
+  sourceUrl: string;
+  updatedAtDate: string;
   imageSrc: string;
   characterName: string;
   featuredFilms: string[];
-  id: number;
+  onClickViewDetails: (id: number, sourceUrl: string, updatedAt: string) => void;
 }
 
-const Character: React.FC<CharacterProps> = ({ imageSrc, characterName, featuredFilms, id }) => {
+const Character: React.FC<CharacterProps> = ({ 
+  characterId, 
+  sourceUrl, 
+  updatedAtDate, 
+  imageSrc, 
+  characterName, 
+  featuredFilms, 
+  onClickViewDetails 
+}) => {
   const [imageError, setImageError] = useState(false);
 
   return (
@@ -20,8 +30,9 @@ const Character: React.FC<CharacterProps> = ({ imageSrc, characterName, featured
           <Image
             src={imageSrc}
             alt={characterName}
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: 'cover' }}
             onError={() => {
               setImageError(true); // Trigger fallback to gray background
             }}
@@ -51,7 +62,8 @@ const Character: React.FC<CharacterProps> = ({ imageSrc, characterName, featured
           ))}
         </div>
 
-        <div className="text-xs inline-block font-semibold underline uppercase mt-auto">
+        <div onClick={() => onClickViewDetails(characterId, sourceUrl, updatedAtDate)} 
+          className="hover:cursor-pointer text-xs inline-block font-semibold underline uppercase mt-auto">
           View Profile
         </div>
       </div>

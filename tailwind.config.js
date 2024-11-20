@@ -20,7 +20,6 @@ module.exports = {
         light: "##fff",
         primary: "#054553",
         secondary: '#f1f2f3',
-        primaryDark: "#58E6D9", // 80,230,217
         tertiary: "#A7B6C5",
         textSecondary: "#5B6873",
         required: "#ff0000",
