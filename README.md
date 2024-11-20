@@ -45,5 +45,6 @@ This will generate an optimized production build. You can then start the project
 `npm start`
 
 This will host the production build at http://localhost:3000.
+
 ---
 ### Now you're ready to dive into your magical Disney adventure! Enjoy searching for your favorite characters, learning about their films, and discovering new ones! 🏰✨
