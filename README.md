@@ -35,15 +35,13 @@ Ensure you have the following installed on your local development machine:
 
 `npm run dev`
 
+This command starts a local development server at http://localhost:3000. Any changes to your code will automatically trigger a page refresh.
+
 ## Building the Project
 
 ### To run the project in production:
 
 `npm run build`
-
-
-This command starts a local development server at http://localhost:3000. Any changes to your code will automatically trigger a page refresh.
-
 
 ## Custom Scripts
 `npm run lint / npm lint: Lints the codebase using ESLint.`
