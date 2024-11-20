@@ -37,7 +37,6 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
           className="rounded-lg shadow-lg"
         />
       </div>
-
       {/* Right side - Character Details */}
       <div className="w-full md:w-2/3 md:pl-4 pl-8">
         <h1 className="text-3xl font-bold text-gray-900">{characterName}</h1>
@@ -54,7 +53,6 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
           </div>
         }
         {shortFilms &&
-
           <div className="mt-6">
             <h3 className="text-xl font-semibold text-gray-800">Short Films</h3>
             <ul className="list-disc pl-6 text-textSecondary">
@@ -64,7 +62,6 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
             </ul>
           </div>
         }
-
         {tvShows &&
           <div className="mt-6">
             <h3 className="text-xl font-semibold text-gray-800">TV Shows</h3>
