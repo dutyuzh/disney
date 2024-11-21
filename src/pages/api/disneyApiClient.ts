@@ -3,7 +3,7 @@ import axios from 'axios';
 // Create an axios instance with default settings
 const disneyApiClient = axios.create({
   baseURL: process.env.REACT_APP_DISNEY_API_URL || 'https://api.disneyapi.dev',
-  timeout: 8000, // 6 seconds timeout
+  timeout: 8000, // 8 seconds timeout
   headers: {
     // Add any headers here if needed (e.g., authorization headers)
     'Content-Type': 'application/json',

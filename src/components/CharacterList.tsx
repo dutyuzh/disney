@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CharacterCard from './CharacterCard';
 
 // Define the structure of a single character
