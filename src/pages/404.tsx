@@ -1,5 +1,6 @@
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
+import Loading from "@/components/Loading";
 import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import Link from "next/link";
@@ -18,13 +19,14 @@ const NotFound = () => {
         />
       </Head>
       <TransitionEffect />
-      <main className="h-[75vh] w-full">
+      <main className="w-full">
         <Layout className="relative !bg-transparent !pt-16 flex flex-col items-center justify-center">
           <AnimatedText text="404" className="" />
           <AnimatedText
             text="Oops! This page is lost in the Magic Kingdom."
-            className="!text-7xl"
+            className="!text-4xl p-2"
           />
+          <Loading width={200} />
           <Link
             href="/"
             className="self-center !mt-4 inline-block btn btn-secondary"
