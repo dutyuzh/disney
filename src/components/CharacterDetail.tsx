@@ -28,9 +28,9 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="p-[48px] flex md:flex-wrap sm:flex-wrap">
+    <div className="px-[80px] lg:px-[40px] flex md:flex-wrap sm:flex-wrap">
       {/* Left side - Image */}
-      <div className="w-1/2 md:w-1/3 h-96 relative mb-6 md:mb-0">
+      <div className="w-1/2 lg:w-full h-96 relative mb-6 md:mb-2">
         {!imageError ? (
           <Image
             src={imageSrc}
@@ -45,13 +45,12 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
           />
         ) : (
           <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-            {/* Optional text or icon can be placed here */}
             <span className="text-textSecondary">Image not available</span>
           </div>
         )}
       </div>
       {/* Right side - Character Details */}
-      <div className="w-full md:w-2/3 md:pl-4 pl-8">
+      <div className="w-full lg:w-100 md:pl-0 pl-6">
         <h1 className="text-3xl font-bold text-gray-900">{characterName}</h1>
         <p className="text-sm text-gray-500 mt-2">Last Updated: {updatedDate}</p>
 
@@ -86,8 +85,8 @@ const CharacterDetail: React.FC<CharacterDetailProps> = ({
           </div>
         }
 
-        <Link href={srcUrl ? srcUrl : `/characters/${id}`} passHref target="_blank">
-          <button className="border border-primary mt-6 bg-primary text-white hover:bg-white rounded-lg hover:text-primary px-[24px] py-[16px] shadow-black">
+        <Link href={srcUrl} passHref target="_blank">
+          <button className="btn btn-primary mt-4">
             Explore More Character Details
           </button>
         </Link>

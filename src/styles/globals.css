@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply px-[24px] py-[12px] rounded-md transition-all duration-300 shadow;
+}
+
+.btn-primary {
+  @apply border border-primary bg-primary text-white hover:bg-white hover:text-primary;
+}
+
+.btn-secondary {
+  @apply border border-primary bg-transparent text-primary hover:bg-primary hover:text-white;
+}
+
+.link {
+  @apply hover:cursor-pointer text-xs inline-block font-semibold underline uppercase mt-auto transition-all duration-300
+}

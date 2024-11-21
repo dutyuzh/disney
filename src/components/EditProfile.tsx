@@ -182,13 +182,13 @@ const EditProfile: React.FC = () => {
                 <div className="flex gap-4">
                     <button
                         type="submit"
-                        className="border bg-primary hover:border hover:border-primary text-white hover:bg-white rounded-lg hover:text-primary px-[24px] py-[12px] shadow-black"
+                        className="btn btn-primary"
                     >
                         Update Profile
                     </button>
                     <button
                         type="button"
-                        className="border border-primary text-primary px-[24px] py-[12px] rounded-md hover:bg-primary-light hover:text-primary"
+                        className="btn btn-secondary"
                         onClick={() => window.location.href = '/account/profile'}
                     >
                         Cancel

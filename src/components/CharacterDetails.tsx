@@ -47,6 +47,9 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ characterId, srcUrl
                 <Loading />
             ) : (
                 <>
+                 <a href="#"
+                        className="link ml-[80px] md:ml-[40px] mb-2"
+                        onClick={onGoBack}>Back to List</a>
                     <CharacterDetail
                         lastUpdatedDate={character.updatedAt}
                         characterName={character.name}
@@ -57,9 +60,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({ characterId, srcUrl
                         id={character._id}
                         srcUrl={srcUrl}
                     />
-                    <button
-                        className="border border-primary ml-6 mb-6 bg-primary text-white hover:bg-white rounded-lg hover:text-black px-[24px] py-[16px] shadow-black"
-                        onClick={onGoBack}>Back to List</button>
+                   
                 </>
             )}
         </div>
